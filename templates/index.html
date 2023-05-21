@@ -1,0 +1,25 @@
+<!-- Declare the document type as HTML5 -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Set the character encoding for the document -->
+        <meta charset="UTF-8" />
+        <!-- Configure the viewport for responsive design -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Set the title of the document -->
+        <title>Counter</title>
+    </head>
+    <body>
+        <!-- Display the number of visits using the 'visits' variable passed from Flask -->
+        <h1>Visits: {{ visits }}</h1>
+        <!-- Create a form with the POST method and set its action to the "/add" route -->
+        <form action="/add" method="POST">
+            <!-- Add an input field for the increment value, with a default value of 1 and a minimum value of 1 -->
+            <input type="number" name="increment" value="1" min="1" />
+            <!-- Add a submit button for the form -->
+            <button type="submit">Add</button>
+        </form>
+        <!-- Add a button to reset the counter, which navigates to the "/destroy_session" route when clicked -->
+        <button onclick="location.href='/destroy_session'">Reset</button>
+    </body>
+</html>
